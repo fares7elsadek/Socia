@@ -10,8 +10,8 @@ import {
 import { Post } from './models/post.model.js';
 import { PostsService } from './posts.service.js';
 import { CreatePostInput } from './dto/create-post.input.js';
-import { UsersService } from '../users/users.service.js';
 import { User } from '../users/models/user.model.js';
+import { UsersService } from '../users/services/users.service.js';
 
 
 @Resolver(() => Post)

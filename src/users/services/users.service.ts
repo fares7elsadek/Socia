@@ -1,7 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { User } from './models/user.model.js';
-import { CreateUserInput } from './dto/create-user.input.js';
+
 import { randomUUID } from 'node:crypto';
+import { User } from '../models/user.model.js';
+import { CreateUserInput } from '../dto/create-user.input.js';
 
 
 @Injectable()
@@ -16,9 +17,10 @@ export class UsersService {
       email: input.email,
       bio: input.bio,
       createdAt: new Date(),
+      password: randomUUID()
     };
 
-    this.users.set(user.id, user);
+    this.users.set(user.username, user);
     return user;
   }
 
